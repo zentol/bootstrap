@@ -569,7 +569,7 @@ class Carousel {
       config.interval = false
     }
 
-    Carousel._jQueryInterface.call($(target), config)
+    Carousel._carouselInterface(target, config)
 
     if (slideIndex) {
       Data.getData(target, DATA_KEY).to(slideIndex)
@@ -603,8 +603,8 @@ EventHandler.on(window, Event.LOAD_DATA_API, () => {
  * add .carousel to jQuery only if jQuery is present
  */
 
-if (typeof window.$ !== 'undefined' || typeof window.jQuery !== 'undefined') {
-  const $                  = window.$ || window.jQuery
+const $ = Util.jQuery
+if (typeof $ !== 'undefined') {
   const JQUERY_NO_CONFLICT = $.fn[NAME]
   $.fn[NAME]               = Carousel._jQueryInterface
   $.fn[NAME].Constructor   = Carousel
