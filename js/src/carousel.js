@@ -577,6 +577,10 @@ class Carousel {
 
     event.preventDefault()
   }
+
+  static _getInstance(element) {
+    return Data.getData(element, DATA_KEY)
+  }
 }
 
 /**
@@ -594,7 +598,6 @@ EventHandler.on(window, Event.LOAD_DATA_API, () => {
     Carousel._carouselInterface.call(carousels[i], Data.getData(carousels[i], DATA_KEY))
   }
 })
-
 
 /**
  * ------------------------------------------------------------------------
