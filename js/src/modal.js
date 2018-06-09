@@ -464,7 +464,7 @@ class Modal {
     // Restore fixed content padding
     Util.makeArray(SelectorEngine.find(Selector.FIXED_CONTENT))
       .forEach((element) => {
-        const padding = Util.getDataAttribute(element, 'padding-right')
+        const padding = Manipulator.getDataAttribute(element, 'padding-right')
         if (typeof padding !== 'undefined') {
           Manipulator.removeDataAttribute(element, 'padding-right')
           element.style.paddingRight = padding
@@ -474,7 +474,7 @@ class Modal {
     // Restore sticky content and navbar-toggler margin
     Util.makeArray(SelectorEngine.find(`${Selector.STICKY_CONTENT}`))
       .forEach((element) => {
-        const margin = Util.getDataAttribute(element, 'margin-right')
+        const margin = Manipulator.getDataAttribute(element, 'margin-right')
         if (typeof margin !== 'undefined') {
           Manipulator.removeDataAttribute(element, 'margin-right')
           element.style.marginRight = margin
@@ -482,16 +482,12 @@ class Modal {
       })
 
     // Restore body padding
-    const padding = Util.getDataAttribute(document.body, 'padding-right')
+    const padding = Manipulator.getDataAttribute(document.body, 'padding-right')
     if (typeof padding !== 'undefined') {
       Manipulator.removeDataAttribute(document.body, 'padding-right')
       document.body.style.paddingRight = padding
     } else {
       document.body.style.paddingRight = ''
-    }
-
-    static _getInstance(element) {
-      return Data.getData(element, DATA_KEY)
     }
   }
 
@@ -511,7 +507,7 @@ class Modal {
       let data = Data.getData(this, DATA_KEY)
       const _config = {
         ...Default,
-        ...Util.getDataAttributes(this),
+        ...Manipulator.getDataAttributes(this),
         ...typeof config === 'object' && config ? config : {}
       }
 
@@ -529,6 +525,10 @@ class Modal {
         data.show(relatedTarget)
       }
     })
+  }
+
+  static _getInstance(element) {
+    return Data.getData(element, DATA_KEY)
   }
 }
 
@@ -548,8 +548,8 @@ EventHandler.on(document, Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (
 
   const config = Data.getData(target, DATA_KEY)
     ? 'toggle' : {
-      ...Util.getDataAttributes(target),
-      ...Util.getDataAttributes(this)
+      ...Manipulator.getDataAttributes(target),
+      ...Manipulator.getDataAttributes(this)
     }
 
   if (this.tagName === 'A' || this.tagName === 'AREA') {
