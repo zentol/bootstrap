@@ -117,7 +117,7 @@ class Modal {
       relatedTarget
     })
 
-    if (this._isShown || showEvent.isDefaultPrevented()) {
+    if (this._isShown || showEvent.defaultPrevented) {
       return
     }
 
@@ -161,7 +161,7 @@ class Modal {
 
     const hideEvent = EventHandler.trigger(this._element, Event.HIDE)
 
-    if (!this._isShown || hideEvent.isDefaultPrevented()) {
+    if (!this._isShown || hideEvent.defaultPrevented) {
       return
     }
 
@@ -376,7 +376,7 @@ class Modal {
       const backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop)
 
       EventHandler.one(this._backdrop, Util.TRANSITION_END, callback)
-      Util.emulateTransitionEnd(backdropTransitionDuration)
+      Util.emulateTransitionEnd(this._backdrop, backdropTransitionDuration)
     } else if (!this._isShown && this._backdrop) {
       this._backdrop.classList.remove(ClassName.SHOW)
 
