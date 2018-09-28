@@ -35,6 +35,10 @@ Skip the download with [BootstrapCDN](https://www.bootstrapcdn.com/) to deliver 
 {% highlight html %}
 <link rel="stylesheet" href="{{ site.cdn.css }}" integrity="{{ site.cdn.css_hash }}" crossorigin="anonymous">
 <script src="{{ site.cdn.js }}" integrity="{{ site.cdn.js_hash }}" crossorigin="anonymous"></script>
+
+<!-- or -->
+
+<script src="{{ site.cdn.js_bundle }}" integrity="{{ site.cdn.js_bundle_hash }}" crossorigin="anonymous"></script>
 {% endhighlight %}
 
 If you're using our compiled JavaScript, don't forget to include CDN versions of jQuery and Popper.js before it.
