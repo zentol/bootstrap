@@ -7,19 +7,40 @@
     "stylelint-order"
   ],
   "rules": {
-    "at-rule-empty-line-before": null,
+    "at-rule-empty-line-before": [
+      "always",
+      "ignore": [
+        "after-comment",
+        "blockless-after-same-name-blockless",
+        "inside-block"
+      ]
+    ],
     "at-rule-name-space-after": "always",
     "at-rule-no-unknown": null,
     "at-rule-no-vendor-prefix": true,
     "at-rule-semicolon-space-before": "never",
-    "block-closing-brace-empty-line-before": null,
-    "block-closing-brace-newline-after": null,
-    "block-opening-brace-space-before": null,
+    "block-closing-brace-empty-line-before": "never",
+    "block-closing-brace-newline-after": [
+      "always",
+      "ignoreAtRules": [
+        "/if/",
+        "else",
+        "include"
+      ]
+    ],
+    "block-opening-brace-space-before": "always",
     "color-named": "never",
     "declaration-block-semicolon-newline-after": "always-multi-line",
     "declaration-block-semicolon-newline-before": "never-multi-line",
     "declaration-block-semicolon-space-after": "always-single-line",
-    "declaration-empty-line-before": null,
+    "declaration-empty-line-before": [
+      "always",
+      "except": [
+        "after-comment",
+        "after-declaration",
+        "first-nested"
+      ]
+    ],
     "declaration-no-important": true,
     "font-family-name-quotes": "always-where-recommended",
     "font-weight-notation": [
@@ -263,7 +284,17 @@
     ],
     "property-blacklist": ["transition"],
     "property-no-vendor-prefix": true,
-    "rule-empty-line-before": null,
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": [
+          "first-nested"
+        ],
+        "ignore": [
+          "after-comment"
+        ]
+      }
+    ],
     "scss/at-function-named-arguments": "never",
     "scss/at-function-parentheses-space-before": "never",
     "scss/at-import-no-partial-leading-underscore": true,
@@ -280,13 +311,13 @@
       }
     ],
     "scss/dollar-variable-no-missing-interpolation": true,
-    "scss/media-feature-value-dollar-variable": null,
+    "scss/media-feature-value-dollar-variable": "always",
     "scss/no-duplicate-dollar-variables": [
-      null,
+      true,
       {
-        "ignoreInsideAtRules": [
-          "if",
-          "mixin"
+        "ignoreInside": [
+          "at-rule",
+          "nested-at-rule"
         ]
       }
     ],

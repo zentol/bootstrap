@@ -31,6 +31,7 @@
     color: color-yiq($background);
     background-color: $background;
     border-color: $border;
+
     // Remove CSS gradients if they're enabled
     @if $enable-gradients {
       background-image: none;
@@ -42,6 +43,7 @@
   .show > &.dropdown-toggle {
     color: color-yiq($active-background);
     background-color: $active-background;
+
     @if $enable-gradients {
       background-image: none; // Remove the gradient for the pressed/active state
     }
@@ -102,6 +104,7 @@
   padding: $padding-y $padding-x;
   font-size: $font-size;
   line-height: $line-height;
+
   // Manually declare to provide an override to the browser default
   @if $enable-rounded {
     border-radius: $border-radius;

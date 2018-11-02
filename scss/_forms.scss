@@ -307,8 +307,8 @@ textarea.form-control {
       width: auto;
     }
 
-    // Remove default margin on radios/checkboxes that were used for stacking, and
-    // then undo the floating of radios and checkboxes to match.
+    // Remove default margin on radios/checkboxes that were used for stacking,
+    // and then undo the floating of radios and checkboxes to match.
     .form-check {
       display: flex;
       align-items: center;
@@ -316,6 +316,7 @@ textarea.form-control {
       width: auto;
       padding-left: 0;
     }
+
     .form-check-input {
       position: relative;
       margin-top: 0;
@@ -327,6 +328,7 @@ textarea.form-control {
       align-items: center;
       justify-content: center;
     }
+
     .custom-control-label {
       margin-bottom: 0;
     }

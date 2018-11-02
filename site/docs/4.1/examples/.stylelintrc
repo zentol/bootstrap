@@ -6,6 +6,7 @@
     "media-feature-name-no-vendor-prefix": null,
     "property-blacklist": null,
     "property-no-vendor-prefix": null,
+    "scss/media-feature-value-dollar-variable": null,
     "selector-no-qualifying-type": null,
     "selector-no-vendor-prefix": null,
     "value-no-vendor-prefix": null
