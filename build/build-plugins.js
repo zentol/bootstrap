@@ -134,6 +134,23 @@ function getConfigByPluginKey(pluginKey) {
       }
     }
   }
+
+  if (pluginKey === 'Toast') {
+    return {
+      external: [
+        bsPlugins.Data,
+        bsPlugins.EventHandler,
+        bsPlugins.Manipulator,
+        bsPlugins.Util
+      ],
+      globals: {
+        [bsPlugins.Data]: 'Data',
+        [bsPlugins.EventHandler]: 'EventHandler',
+        [bsPlugins.Manipulator]: 'Manipulator',
+        [bsPlugins.Util]: 'Util'
+      }
+    }
+  }
 }
 
 function build(plugin) {
