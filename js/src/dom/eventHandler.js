@@ -1,5 +1,7 @@
 import Polyfill from './polyfill'
-import Util from '../util'
+import {
+  jQuery
+} from '../util'
 
 /**
  * --------------------------------------------------------------------------
@@ -252,7 +254,7 @@ const EventHandler = {
     const inNamespace = event !== typeEvent
     const isNative    = nativeEvents.indexOf(typeEvent) > -1
 
-    const $ = Util.jQuery
+    const $ = jQuery
     let jQueryEvent
 
     let bubbles = true

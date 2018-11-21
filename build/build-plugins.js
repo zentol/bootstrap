@@ -63,7 +63,8 @@ function getConfigByPluginKey(pluginKey) {
   if (
     pluginKey === 'Data' ||
     pluginKey === 'Manipulator' ||
-    pluginKey === 'Util'
+    pluginKey === 'Util' ||
+    pluginKey === 'Polyfill'
   ) {
     return {
       external: [],
@@ -79,15 +80,6 @@ function getConfigByPluginKey(pluginKey) {
       ],
       globals: {
         [bsPlugins.Polyfill]: 'Polyfill',
-        [bsPlugins.Util]: 'Util'
-      }
-    }
-  }
-
-  if (pluginKey === 'Polyfill') {
-    return {
-      external: [bsPlugins.Util],
-      globals: {
         [bsPlugins.Util]: 'Util'
       }
     }

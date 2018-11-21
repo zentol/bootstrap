@@ -1,4 +1,6 @@
-import Util from '../util'
+import {
+  getUID
+} from '../util'
 
 /**
  * --------------------------------------------------------------------------
@@ -78,7 +80,7 @@ const Polyfill = (() => {
 
       const hasId = Boolean(this.id)
       if (!hasId) {
-        this.id = Util.getUID('scope')
+        this.id = getUID('scope')
       }
 
       let nodeList = null
