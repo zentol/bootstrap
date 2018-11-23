@@ -18,7 +18,7 @@ layout: home
         </p>
         <div class="row mx-n2">
           <div class="col-md px-2">
-            <a href="{{ .Site.BaseURL }}/docs/{{ .Site.Params.docs_version }}/getting-started/introduction/" class="btn btn-lg btn-bd-primary w-100 mb-3" onclick="ga('send', 'event', 'Jumbotron actions', 'Get started', 'Get started');">Get started</a>
+            <a href="{{< ref "/docs/4.1/getting-started/introduction.md" >}}" class="btn btn-lg btn-bd-primary w-100 mb-3" onclick="ga('send', 'event', 'Jumbotron actions', 'Get started', 'Get started');">Get started</a>
           </div>
           <div class="col-md px-2">
             <a href="{{ .Site.BaseURL }}/docs/{{ .Site.Params.docs_version }}/getting-started/download/" class="btn btn-lg btn-outline-secondary w-100 mb-3" onclick="ga('send', 'event', 'Jumbotron actions', 'Download', 'Download {{ .Site.Params.current_version }}');">Download</a>
