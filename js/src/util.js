@@ -127,10 +127,8 @@ const isVisible = (element) => {
   return false
 }
 
-const noop = () => {
-  // eslint-disable-next-line no-empty-function
-  return function () {}
-}
+// eslint-disable-next-line no-empty-function
+const noop = () => () => {}
 
 const jQuery = () => window.$ || window.jQuery
 
